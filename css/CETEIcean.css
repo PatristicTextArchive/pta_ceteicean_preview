@@ -317,6 +317,7 @@ tei-cb {
   font-size: 80%;
   color:grey;
 }
+
 /*
 tei-cb[break=no]:not([edRef]):after {
   content: '|-\a';
@@ -1634,34 +1635,63 @@ tei-app[type="variants"]{
   background-color: honeydew;
 }
 
+tei-app[type="variants"]::before {
+  content: "⸢"
+}
+
+tei-app[type="variants"]::after {
+  content: "⸣"
+}
+
 tei-app[type="variants"] tei-app[type="variants"] {
   padding-left: 2px; 
   padding-right: 1px; 
   padding-bottom: 2px;
+  margin-left: 2px;
   margin-right: 2px;
   background-color: whitesmoke;
 }    
+
+tei-app[type="variants"] tei-app[type="variants"]::before {
+  content: "⸢⸢"
+}
+
+tei-app[type="variants"] tei-app[type="variants"]::after {
+  content: "⸣⸣"
+}
 
 tei-app[type="variants"] tei-app[type="variants"] tei-app[type="variants"] {
   padding-left: 1px; 
   padding-right: 1px; 
   padding-bottom: 1px;
+  margin-left: 4px;
   margin-right: 2px;
   background-color: lightblue;
 }   
 
+tei-app[type="variants"] tei-app[type="variants"] tei-app[type="variants"]::before {
+  content: "⸢⸢⸢"
+}
+
+tei-app[type="variants"] tei-app[type="variants"] tei-app[type="variants"]::after {
+  content: "⸣⸣⸣"
+}
+
 tei-app[type="variants"] tei-lem {
+  background-color: inherit;
   color: black;
   text-decoration: underline;
 }
 
 tei-app[type="variants"] tei-rdg {
+  background-color: inherit;
   color: grey;
   text-decoration: overline;
 }
 
 
 tei-app[type="variants"] tei-rdg:nth-child(2n) {
+  background-color: inherit;
   color: dimgray;
   text-decoration: overline;
 }    
@@ -1679,6 +1709,15 @@ tei-app[type="variants"] tei-rdg:last-child:after
 tei-rdgGrp {
   display: inline;
 }
+
+tei-rdgGrp::before {
+  content: "{"
+}
+
+tei-rdgGrp::after {
+  content: "}"
+}
+
 tei-re {
   display: block;
   margin-top: 0;
